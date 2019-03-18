@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>E::before_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+<style>
+body{margin:0;}
+.hh{-webkit-perspective-origin:50% 100px;-moz-perspective-origin:50% 100px;-webkit-perspective:400;-moz-perspective:400;}
+.div1{margin:100px auto 0;width:200px;height:200px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-webkit-transition:-webkit-transform 2s linear;-moz-transition:-moz-transform 2s linear;-webkit-transform:rotateX(0) rotateY(0);-moz-transform:rotateX(0) rotateY(0);position:relative;-webkit-animation:animations 5s linear infinite;-moz-animation:animations 5s linear infinite;}
+.div1:hover{-webkit-transform:rotateX(90deg) rotateY(90deg);-moz-transform:rotateX(90deg) rotateY(90deg);}
+.div1 div{width:200px;height:200px;background:rgba(0,0,0,0.6);position:absolute;line-height:200px;text-align:center;color:#fff;font-size:30px;font-family:"微软雅黑";font-weight:bold;}
+.div2{-moz-transform:rotateY(0) translateZ(100px);-webkit-transform:rotateY(0) translateZ(100px);}
+.div3{-moz-transform:rotateY(90deg) translateZ(100px);-webkit-transform:rotateY(90deg) translateZ(100px);}
+.div4{-moz-transform:rotateY(-90deg) translateZ(100px);-webkit-transform:rotateY(-90deg) translateZ(100px);}
+.div5{-moz-transform:rotateY(180deg) translateZ(100px);-webkit-transform:rotateY(180deg) translateZ(100px);}
+.div6{-moz-transform:rotateX(-90deg) translateZ(100px);-webkit-transform:rotateX(-90deg) translateZ(100px);}
+.div7{-moz-transform:rotateX(90deg) translateZ(100px);-webkit-transform:rotateX(90deg) translateZ(100px);}
+@-webkit-keyframes animations{
+    0%{-webkit-transform:rotateX(0) rotateY(0);}
+    25%{-webkit-transform:rotateX(90deg) rotateY(90deg);}
+    50%{-webkit-transform:rotateX(180deg) rotateY(180deg);}
+    75%{-webkit-transform:rotateX(270deg) rotateY(270deg);}
+    100%{-webkit-transform:rotateX(360deg) rotateY(360deg);}
+}
+@-moz-keyframes animations{
+    0%{-moz-transform:rotateX(0) rotateY(0);}
+    25%{-moz-transform:rotateX(90deg) rotateY(90deg);}
+    50%{-moz-transform:rotateX(180deg) rotateY(180deg);}
+    75%{-moz-transform:rotateX(270deg) rotateY(270deg);}
+    100%{-moz-transform:rotateX(360deg) rotateY(360deg);}
+}
+</style>
+</head>
+<body>
+<div class="hh">
+<div class="div1"><div class="div2">春</div><div class="div3">天</div><div class="div4">在</div><div class="div5">哪</div><div class="div6">里</div><div class="div7">呀</div></div>
+</div>
+</body>
+</html>

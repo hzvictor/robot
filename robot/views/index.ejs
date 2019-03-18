@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #d9beca
+        }
+
+        .wrapper {
+            height: 40px;
+            width: 184px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px 0 0 -80px;
+        }
+
+        .text {
+            margin-top: 10px;
+        }
+
+        .wrapper>ul {
+            height: inherit;
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 46px;
+            height: inherit;
+            float: left;
+        }
+
+        .sphere {
+            position: relative;
+            height: 40px;
+            width: 40px;
+            border: 6px solid #222;
+            border-radius: 50%;
+            background: #222;
+            margin-left: 3px;
+            top: 0;
+        }
+
+        .container:nth-of-type(1) .sphere {
+            -webkit-animation: bounce 2s infinite ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(2) .sphere {
+            -webkit-animation: bounce 2s infinite .2s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .2s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .2s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .2s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(3) .sphere {
+            -webkit-animation: bounce 2s infinite .4s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .4s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .4s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .4s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(4) .sphere {
+            -webkit-animation: bounce 2s infinite .6s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: bounce 2s infinite .6s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: bounce 2s infinite .6s ease-in-out;
+            /* Opera 12+ */
+            animation: bounce 2s infinite .6s ease-in-out;
+            /* IE 10+ */
+        }
+
+        /* Green */
+        @-webkit-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @-moz-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @-o-keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 0;
+            }
+
+            25% {
+                top: -180px;
+            }
+
+            50% {
+                top: 0;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        span.shadow {
+            height: 10px;
+            width: 40px;
+            display: block;
+            background: rgba(0, 0, 0, 0.45);
+            margin-left: -20px;
+            border-radius: 50%;
+            position: relative;
+            left: 50%;
+        }
+
+        @-webkit-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @-moz-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @-o-keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+        @keyframes depth {
+            0% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            25% {
+                height: 4px;
+                width: 20px;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            50% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+
+            100% {
+                height: 10px;
+                width: 40px;
+                background: rgba(0, 0, 0, 0.45);
+            }
+        }
+
+
+        .container:nth-of-type(1) .shadow {
+            -webkit-animation: depth 2s infinite ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(2) .shadow {
+            -webkit-animation: depth 2s infinite .2s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .2s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .2s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .2s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(3) .shadow {
+            -webkit-animation: depth 2s infinite .4s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .4s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .4s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .4s ease-in-out;
+            /* IE 10+ */
+        }
+
+        .container:nth-of-type(4) .shadow {
+            -webkit-animation: depth 2s infinite .6s ease-in-out;
+            /* Safari 4+ */
+            -moz-animation: depth 2s infinite .6s ease-in-out;
+            /* Fx 5+ */
+            -o-animation: depth 2s infinite .6s ease-in-out;
+            /* Opera 12+ */
+            animation: depth 2s infinite .6s ease-in-out;
+            /* IE 10+ */
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        #app div:first-child {
+            font-size: 19px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+            line-height: 10vw;
+            text-align: center;
+        }
+
+        .wrappers {
+            display: flex;
+            flex-direction: column;
+            margin-top: -34px;
+        }
+
+        .wrappers>div {
+            width: 100%;
+            height: 300px;
+            flex-shrink: 1;
+        }
+
+        .hh {
+            -webkit-perspective-origin: 50% 100px;
+            -moz-perspective-origin: 50% 100px;
+            -webkit-perspective: 400;
+            -moz-perspective: 400;
+        }
+
+        .div1 {
+            margin: 100px auto 0;
+            width: 100px;
+            height: 100px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 2s linear;
+            -moz-transition: -moz-transform 2s linear;
+            -webkit-transform: rotateX(0) rotateY(0);
+            -moz-transform: rotateX(0) rotateY(0);
+            position: relative;
+            -webkit-animation: animations 5s linear infinite;
+            -moz-animation: animations 5s linear infinite;
+        }
+
+        .div1:hover {
+            -webkit-transform: rotateX(90deg) rotateY(90deg);
+            -moz-transform: rotateX(90deg) rotateY(90deg);
+        }
+
+        .div1 div {
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+            font-family: "微软雅黑";
+            font-weight: bold;
+        }
+
+        .div2 {
+            -moz-transform: rotateY(0) translateZ(50px);
+            -webkit-transform: rotateY(0) translateZ(50px);
+        }
+
+        .div3 {
+            -moz-transform: rotateY(90deg) translateZ(50px);
+            -webkit-transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .div4 {
+            -moz-transform: rotateY(-90deg) translateZ(50px);
+            -webkit-transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .div5 {
+            -moz-transform: rotateY(180deg) translateZ(50px);
+            -webkit-transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .div6 {
+            -moz-transform: rotateX(-90deg) translateZ(50px);
+            -webkit-transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        .div7 {
+            -moz-transform: rotateX(90deg) translateZ(50px);
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .color1 {
+            background: rgb(208, 16, 76) !important
+        }
+
+        .color2 {
+            background: rgb(88, 178, 220) !important
+        }
+
+        .color3 {
+            background: rgb(0, 137, 108) !important
+        }
+
+        @-webkit-keyframes animations {
+            0% {
+                -webkit-transform: rotateX(0) rotateY(0);
+            }
+
+            25% {
+                -webkit-transform: rotateX(90deg) rotateY(90deg);
+            }
+
+            50% {
+                -webkit-transform: rotateX(180deg) rotateY(180deg);
+            }
+
+            75% {
+                -webkit-transform: rotateX(270deg) rotateY(270deg);
+            }
+
+            100% {
+                -webkit-transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @-moz-keyframes animations {
+            0% {
+                -moz-transform: rotateX(0) rotateY(0);
+            }
+
+            25% {
+                -moz-transform: rotateX(90deg) rotateY(90deg);
+            }
+
+            50% {
+                -moz-transform: rotateX(180deg) rotateY(180deg);
+            }
+
+            75% {
+                -moz-transform: rotateX(270deg) rotateY(270deg);
+            }
+
+            100% {
+                -moz-transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="app">
+        <div class="text">{{message}}</div>
+        <div class="wrapper" v-if="false">
+            <ul>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+                <li class="container">
+                    <section class="sphere"></section>
+                    <span class="shadow"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="wrappers" v-if="true">
+            <div>
+                <div class="frist">
+                    <div class="hh">
+                        <div class="div1">
+                            <div :class="[{div2:true} ,frist]"></div>
+                            <div :class="[{div3:true} ,frist]"></div>
+                            <div :class="[{div4:true} ,frist]"></div>
+                            <div :class="[{div5:true} ,frist]"></div>
+                            <div :class="[{div6:true} ,frist]"></div>
+                            <div :class="[{div7:true} ,frist]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="second">
+                        <div class="hh">
+                            <div class="div1">
+                                <div :class="[{div2:true} ,second]"></div>
+                                <div :class="[{div3:true} ,second]"></div>
+                                <div :class="[{div4:true} ,second]"></div>
+                                <div :class="[{div5:true} ,second]"></div>
+                                <div :class="[{div6:true} ,second]"></div>
+                                <div :class="[{div7:true} ,second]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="thd">
+                        <div class="hh">
+                            <div class="div1">
+                                <div :class="[{div2:true} ,throd]"></div>
+                                <div :class="[{div3:true} ,throd]"></div>
+                                <div :class="[{div4:true} ,throd]"></div>
+                                <div :class="[{div5:true} ,throd]"></div>
+                                <div :class="[{div6:true} ,throd]"></div>
+                                <div :class="[{div7:true} ,throd]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '任务队列',
+                frist: 'color1',
+                second: 'color2',
+                throd: 'color3'
+            }
+        })
+    </script>
+</body>
+
+</html>
